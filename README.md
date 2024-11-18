@@ -2,7 +2,7 @@
 This receipt scanner application analyzes the receipts uploaded by the user and automatically extracts specific data from the receipt, such as the company name, tax ID, total amount, tax amount, date, and address. It utilizes the OpenAI API and the GPT-4o model's Vision feature for data extraction and processing.
 
 # Documentation
-All the necessary information can be found at the link: https://platform.openai.com/
+All the necessary information about OpenAI can be found at the link: https://platform.openai.com/
 
 # Footage
 ![ss](https://github.com/user-attachments/assets/116b7147-29c5-422f-ae1a-98eb29d22a49)

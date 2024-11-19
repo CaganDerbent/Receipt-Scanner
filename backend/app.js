@@ -11,7 +11,7 @@ const app = express();
 const port = 3001;
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://receiptai.vercel.app/",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
   }));

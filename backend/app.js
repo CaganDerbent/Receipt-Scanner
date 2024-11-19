@@ -11,7 +11,7 @@ const app = express();
 const port = 3001;
 
 app.use(cors({
-    origin: "https://receiptai.vercel.app/scan",
+    origin: "*",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization"],
   }));

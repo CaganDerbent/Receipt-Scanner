@@ -1,97 +1,132 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
-.container {
-  display: flex;
-  gap: 20px;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 800px;
-  height: 530px;
-}
+  
+  .app {
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .app-header {
+    padding: 20px;
+    color: white;
+    background-color: #0362fc;
+  }
+  p{
+    color: #0362fc;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .receipt-section, .scanned-data-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+  }
 
-.upload-section, .result-section {
-  flex: 1;
-}
+  
+  .receipt-preview {
+    border: 2px dashed #9ca3af;
+    padding: 10px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .receipt-image {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .scan-button {
+    background-color: #0362fc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .scan-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .data-card {
+    text-align: left;
+    background-color: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .data-card p {
+    margin: 10px 0;
+  }
+  
+  .data-card strong {
+    color: #1e3a8a;
+  }
 
-h3 {
-  margin-top: 0;
-}
-
-.upload-box {
-  border: 2px dashed #ddd;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-}
-
-.upload-box2 {
-  border: 2px #ddd;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  display: flex;
-  justify-content: baseline;
-  flex-direction: column;
-  position: relative;
-}
-
-
-.upload-box img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: contain;
-}
-
-.upload-box input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-
-textarea {
-  width: 100%;
-  height: 70%;
-  margin-top: 10px;
-  resize: none;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-h4{
-  display: inline-block;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  text-align: left;
-  font-size: 12px;
-}
-p{
-  font-weight: normal;
-}
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .receipt-section,
+    .scanned-data-section {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    .scan-button {
+      font-size: 14px;
+    }
+    p{
+      font-size: 12px;
+    }
+    h{
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .receipt-preview {
+      height: 300px;
+    }
+  
+    .scan-button {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+  
+    .data-card {
+      padding: 10px;
+    }
+  
+    .data-card p {
+      margin: 8px 0;
+    }
+    p{
+      font-size: 12px;
+    }
+    h{
+      font-size: 16px;
+    }
+  }
+  
+  

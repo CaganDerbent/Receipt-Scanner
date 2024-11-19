@@ -47,6 +47,7 @@ app.post('/process', upload.single('file'), async (req, res) => {
     const file = req.file
 
     if (!file) {
+      console.log("errorfile")
       return res.status(400).send({ error: 'Dosya yüklenemedi.' });
     }
 
@@ -92,6 +93,7 @@ app.post('/process', upload.single('file'), async (req, res) => {
     );
 
     const json = await response.data;
+    console.log(json)
 
     let content = json.choices[0].message.content;
 

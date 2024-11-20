@@ -39,7 +39,7 @@ let filename = ``
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '../tmp'); 
+    cb(null, '/tmp'); 
   },
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
@@ -72,7 +72,7 @@ app.post('/process', upload.single('file'), async (req, res) => {
       return res.status(400).send({ error: 'Dosya yüklenemedi.' });
     }
 
-    const filepath = "../tmp" + "/" + filename;
+    const filepath = "/tmp" + "/" + filename;
 
     const imageBytes = fs.readFileSync(filepath);
     const base64Image = imageBytes.toString('base64');

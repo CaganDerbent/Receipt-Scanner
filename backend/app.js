@@ -3,7 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
-const cors = require("cors");
+//const cors = require("cors");
 const bodyParser = require('body-parser');
 require('dotenv').config();
 

@@ -37,18 +37,18 @@ let filename = ``
 //   });
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb)=> {
+  destination: (req, file, cb) => {
     cb(null, '/tmp'); 
   },
-  filename: (req, file, cb)=> {
-    cb(null, file.fieldname + '-' + Date.now());
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    filename = `${Date.now()}${ext}`;
+    cb(null, filenaame);
+
+    // Global dosya adı yerine, işlem yaparken kullanabilirsiniz
+    //req.savedFilename = newFilename;
   }
 });
-  
-  const upload = multer({
-    storage: storage,
-    limits: { fileSize: 25 * 1024 * 1024 },
-  });
 
 
 

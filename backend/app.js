@@ -21,20 +21,29 @@ app.use(bodyParser.json({ limit: '10mb' }));
 
 let filename = ``
 
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//       const dir = './Receipts';
+//       if (!fs.existsSync(dir)) {
+//         fs.mkdirSync(dir);
+//       }
+//       cb(null, dir); 
+//     },
+//     filename: (req, file, cb) => {
+//       const ext = path.extname(file.originalname);
+//       filename = `${Date.now()}${ext}`;
+//       cb(null, filename); 
+//     }
+//   });
+
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      const dir = './Receipts';
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
-      }
-      cb(null, dir); 
-    },
-    filename: (req, file, cb) => {
-      const ext = path.extname(file.originalname);
-      filename = `${Date.now()}${ext}`;
-      cb(null, filename); 
-    }
-  });
+  destination: (req, file, cb)=> {
+    cb(null, '/tmp'); 
+  },
+  filename: (req, file, cb)=> {
+    cb(null, file.fieldname + '-' + Date.now());
+  }
+});
   
   const upload = multer({
     storage: storage,
@@ -57,7 +66,7 @@ app.post('/process', upload.single('file'), async (req, res) => {
       return res.status(400).send({ error: 'Dosya yüklenemedi.' });
     }
 
-    const filepath = "./Receipts" + "/" + filename;
+    const filepath = "./tmp" + "/" + filename;
 
     const imageBytes = fs.readFileSync(filepath);
     const base64Image = imageBytes.toString('base64');

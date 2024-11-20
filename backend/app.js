@@ -10,11 +10,11 @@ require('dotenv').config();
 const app = express();
 const port = 3001;
 
-app.use(cors({
-    origin: "*",
-    methods: ["GET", "POST", "DELETE", "PUT","OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  }));
+// app.use(cors({
+//     origin: "*",
+//     methods: ["GET", "POST", "DELETE", "PUT","OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//   }));
 
 
 app.use(bodyParser.json({ limit: '10mb' }));

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const StyledButton = styled("button")<{ color?: string }>`
-  background: ${(p) => p.color || "#0362fc"};
-  color: ${(p) => (p.color ? "#0362fc" : "#fff")};
+  background: ${(p) => p.color || "#0362fc"}; /* Default background mavi */
+  color: ${(p) => (p.color ? "#0362fc" : "#fff")}; /* Default text beyaz */
   font-size: 1rem;
   font-weight: 700;
   width: 100%;
-  border: 1px solid #edf3f5;
+  border: 1px solid #0362fc; /* Default border mavi */
   border-radius: 4px;
   padding: 13px 0;
   cursor: pointer;
@@ -18,8 +18,33 @@ export const StyledButton = styled("button")<{ color?: string }>`
   &:hover,
   &:active,
   &:focus {
-    color: #fff;
-    border: 1px solid #0362fc;
-    background-color: #0362fc;
+    color: #0362fc;  /* Hoverda text mavi olacak */
+    background-color: #fff;  /* Hoverda arkaplan beyaz olacak */
+    border: 1px solid #fff;  /* Border mavi olacak */
   }
 `;
+
+export const StyledButton2 = styled("button")<{ color?: string }>`
+  background: ${(p) => p.color || "#0362fc"}; /* Default background mavi */
+  color: ${(p) => (p.color ? "#0362fc" : "#fff")}; /* Default text beyaz */
+  font-size: 1rem;
+  font-weight: 700;
+  width: 100%;
+  border: 1px solid #0362fc; /* Default border mavi */
+  border-radius: 4px;
+  padding: 13px 0;
+  cursor: pointer;
+  margin-top: 0.625rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 16px 30px rgb(23 31 114 / 20%);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #0362fc;  /* Hoverda text mavi olacak */
+    background-color: #fff;  /* Hoverda arkaplan beyaz olacak */
+    border: 1px solid #fff;  /* Border mavi olacak */
+  }
+`;
+
+

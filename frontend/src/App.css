@@ -1,132 +1,154 @@
+.app {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+}
 
-  
-  .app {
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .app-header {
-    padding: 20px;
-    color: white;
-    background-color: #0362fc;
-  }
-  p{
-    color: #0362fc;
-  }
-  
-  h1 {
-    margin: 0;
-    font-size: 28px;
-  }
-  
+.app-header {
+  padding: 20px;
+  color: white;
+  background-color: #0362fc;
+}
+
+p {
+  color: #0362fc;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.receipt-section,
+.scanned-data-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  width: 45%;
+}
+
+.section-title {
+  font-size: 24px;
+  color: #0362fc;
+  margin-bottom: 20px;
+}
+
+.receipt-preview {
+  border: 2px dashed #9ca3af;
+  padding: 10px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.receipt-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.file-input {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.scan-button {
+  background-color: #0362fc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.scan-button:hover {
+  background-color: #1d4ed8;
+}
+
+.scan-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.data-card {
+  text-align: left;
+  background-color: #f9fafb;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.data-card p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.data-card strong {
+  color: #1e3a8a;
+}
+
+@media (max-width: 768px) {
   .content {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .receipt-section, .scanned-data-section {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 45%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
-  
-  .receipt-preview {
-    border: 2px dashed #9ca3af;
-    padding: 10px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .receipt-section,
+  .scanned-data-section {
+    width: 90%;
     margin-bottom: 20px;
   }
-  
-  .receipt-image {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
+
   .scan-button {
-    background-color: #0362fc;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
+    font-size: 14px;
   }
-  
-  .scan-button:hover {
-    background-color: #1d4ed8;
+
+  p {
+    font-size: 14px;
   }
-  
+
+  .section-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .receipt-preview {
+    height: 300px;
+  }
+
+  .scan-button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
   .data-card {
-    text-align: left;
-    background-color: #f9fafb;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 12px;
   }
-  
+
   .data-card p {
     margin: 10px 0;
   }
-  
-  .data-card strong {
-    color: #1e3a8a;
+
+  p {
+    font-size: 13px;
   }
 
-  @media (max-width: 768px) {
-    .content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .receipt-section,
-    .scanned-data-section {
-      width: 90%;
-      margin-bottom: 20px;
-    }
-  
-    .scan-button {
-      font-size: 14px;
-    }
-    p{
-      font-size: 12px;
-    }
-    h{
-      font-size: 16px;
-    }
+  .section-title {
+    font-size: 18px;
   }
-  
-  @media (max-width: 480px) {
-    .receipt-preview {
-      height: 300px;
-    }
-  
-    .scan-button {
-      padding: 8px 16px;
-      font-size: 12px;
-    }
-  
-    .data-card {
-      padding: 10px;
-    }
-  
-    .data-card p {
-      margin: 8px 0;
-    }
-    p{
-      font-size: 12px;
-    }
-    h{
-      font-size: 16px;
-    }
-  }
-  
-  
+}

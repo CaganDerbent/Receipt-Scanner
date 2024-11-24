@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|c:\\users\\cagan\\onedrive\\masa\u00FCst\u00FC\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|c:\\users\\cagan\\onedrive\\masa\u00FCst\u00FC\\backend\\backend\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|solutionrelative:backend\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|c:\\users\\cagan\\onedrive\\masa\u00FCst\u00FC\\backend\\backend\\controllers\\scancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|solutionrelative:backend\\controllers\\scancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|c:\\users\\cagan\\onedrive\\masa\u00FCst\u00FC\\backend\\backend\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|solutionrelative:backend\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|c:\\users\\cagan\\onedrive\\masa\u00FCst\u00FC\\backend\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|solutionrelative:backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|c:\\users\\cagan\\onedrive\\masa\u00FCst\u00FC\\backend\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|solutionrelative:backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|c:\\users\\cagan\\onedrive\\masa\u00FCst\u00FC\\backend\\backend\\models\\receipts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F47D430-0CC0-4BD3-AFC5-80E72B67CA87}|backend\\backend.csproj|solutionrelative:backend\\models\\receipts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\.gitignore",
+              "RelativeDocumentMoniker": "backend\\.gitignore",
+              "ToolTip": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\.gitignore",
+              "RelativeToolTip": "backend\\.gitignore",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-24T08:52:31.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Receipts.cs",
+              "DocumentMoniker": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Models\\Receipts.cs",
+              "RelativeDocumentMoniker": "backend\\Models\\Receipts.cs",
+              "ToolTip": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Models\\Receipts.cs",
+              "RelativeToolTip": "backend\\Models\\Receipts.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T08:44:25.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScanController.cs",
+              "DocumentMoniker": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Controllers\\ScanController.cs",
+              "RelativeDocumentMoniker": "backend\\Controllers\\ScanController.cs",
+              "ToolTip": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Controllers\\ScanController.cs",
+              "RelativeToolTip": "backend\\Controllers\\ScanController.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAQwCIAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T08:14:35.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "backend\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "backend\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-24T08:27:01.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\appsettings.json",
+              "RelativeDocumentMoniker": "backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\appsettings.json",
+              "RelativeToolTip": "backend\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-24T08:26:35.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\.env",
+              "RelativeDocumentMoniker": "backend\\.env",
+              "ToolTip": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\.env",
+              "RelativeToolTip": "backend\\.env",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-24T08:23:16.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "backend\\Program.cs",
+              "ToolTip": "C:\\Users\\cagan\\OneDrive\\Masa\u00FCst\u00FC\\backend\\backend\\Program.cs",
+              "RelativeToolTip": "backend\\Program.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T08:13:59.819Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

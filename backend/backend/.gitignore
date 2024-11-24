@@ -1,0 +1,16 @@
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+
+bin/
+obj/
+out/
+*.log
+.env
+
+
+*.nupkg
+packages/

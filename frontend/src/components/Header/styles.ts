@@ -88,8 +88,8 @@ export const Span = styled("span")`
   &:hover,
   &:active,
   &:focus {
-    color: rgb(255, 130, 92);
+    color: rgb(3, 98, 252);
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) wavy underline;
+    text-decoration: rgb(3, 98, 252) underline;
   }
 `;

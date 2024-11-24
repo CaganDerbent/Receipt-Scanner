@@ -24,6 +24,12 @@ namespace YourNamespace.Controllers
             _configuration = configuration;
             _httpClientFactory = httpClientFactory;
         }
+        [Route("/")]
+        [HttpGet]
+        public IActionResult GetHelloWorld()
+        {
+            return Ok("Hello World");
+        }
 
         [Route("/process")]
         [HttpPost]

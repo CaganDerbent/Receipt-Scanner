@@ -63,6 +63,7 @@ const Scanner: React.FC = () => {
     }
 
     setLoading(true);
+    setData(false)
     try {
       const formData = new FormData();
       formData.append('file', uploadedImage);

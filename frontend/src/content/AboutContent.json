@@ -9,7 +9,7 @@
     },
     {
       "title": "",
-      "content": "Easily store and organize your receipt data in CSV format for quick access and management.",
+      "content": "Easily store and organize your receipt data in JSON format for quick access and management.",
       "icon": "csv.svg"
     }
   ]

@@ -5,7 +5,13 @@ const fs = require('fs');
 const axios = require('axios');
 const cors = require("cors");
 const bodyParser = require('body-parser');
+const { PDFDocument, rgb } = require('pdf-lib');
+const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
+const fontkit = require('@pdf-lib/fontkit');
+
+const { scanReceipt } = require('./Controllers/ScanController');
+const { createPdf } = require('./Controllers/FileController');
 
 
 const app = express();
@@ -21,14 +27,23 @@ app.use(cors({
 app.use(bodyParser.json({ limit: '10mb' }));
 
 let filename = ``
+let id = ""
+let ext = ""
+
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '/tmp'); 
+    cb(null, '/tmp/receipts'); 
   },
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    filename = `${Date.now()}${ext}`;
+    ext = path.extname(file.originalname);
+    id = uuidv4();
+    filename = `receipt_${id}${ext}`;
+
+    req.fileInfo = { filename,ext,id };
+
+
+
     cb(null, filename);
   }
 });
@@ -38,6 +53,9 @@ const upload = multer({
   limits: { fileSize: 25 * 1024 * 1024 },
 });
 
+app.post('/process', upload.single('file'), scanReceipt);
+app.post('/pdf',upload.single('file'), createPdf);
+
 
 
 app.get("/",(req,res)=>{
@@ -45,73 +63,9 @@ app.get("/",(req,res)=>{
 })
 
 
-app.post('/process', upload.single('file'), async (req, res) => {
-  try {
-    const file = req.file
-
-    if (!file) {
-      console.log("errorfile")
-      return res.status(400).send({ error: 'Dosya yüklenemedi.' });
-    }
-
-    const filepath = "/tmp" + "/" + filename;
-
-    const imageBytes = fs.readFileSync(filepath);
-    const base64Image = imageBytes.toString('base64');
-
-    const apiKey = process.env.API_KEY;
-
-    const requestBody = {
-      model: 'gpt-4o',
-      messages: [
-        {
-          role: 'user',
-          content: [
-            {
-              type: 'text',
-              text: process.env.PROMPT
-            },
-            {
-              type: 'image_url',
-              image_url: {
-                url: `data:image/jpeg;base64,${base64Image}`
-              }
-            }
-          ]
-        }
-      ],
-      max_tokens: 2048,
-      temperature: 1.0
-    };
-
-    const response = await axios.post(
-      'https://api.openai.com/v1/chat/completions',
-      requestBody,
-      {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'Content-Type': 'application/json'
-        }
-      }
-    );
-
-    const json = await response.data;
-    console.log(json)
-
-    let content = json.choices[0].message.content;
-
-    const jsonString = content.replace(/```json\n|\n```/g, '').trim();
-
-    const parsedData = JSON.parse(jsonString);
-
-    res.status(200).send(parsedData)
-
-  } catch (error) {
-    console.log(error)
-    res.status(500).send(error);
-  }
-});
-
 app.listen(port, () => {
-  
+  console.log('Server is listening on port 3001');
 });
+
+module.exports = {filename,id,ext};
+

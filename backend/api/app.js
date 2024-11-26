@@ -30,7 +30,7 @@ let ext = "";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '..', 'tmp'));
+    cb(null, path.join(__dirname, '..', 'tmp', 'receipts'));
   },
   filename: (req, file, cb) => {
     ext = path.extname(file.originalname);

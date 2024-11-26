@@ -13,7 +13,7 @@ const scanReceipt = async (req, res) => {
   
       if (!file) {
         console.log("errorfile")
-        return res.status(400).send({ error: 'File not uploaded.' });
+        return res.status(400).json({ error: 'File not uploaded.' });
       }
   
       const filepath = "/tmp/receipts" + "/" + filename;
@@ -68,9 +68,9 @@ const scanReceipt = async (req, res) => {
   
       res.status(200).send({parsedData,filename,ext,id})
   
-    } catch (error) {
+    } catch (err) {
       console.log(error)
-      res.status(500).send(error);
+      res.status(500).json({error: err});
     }
   };
 

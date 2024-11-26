@@ -39,8 +39,6 @@ const createPdf = async (req, res) => {
       const filepathimg = path.join(__dirname, `../../tmp/receipts/receipt_${id}${ext}`);
       const fileExtension = path.extname(filepathimg);
   
-      console.log(filepathimg);
-  
       if (fileExtension === '.jpg' || fileExtension === '.jpeg') {
         const imageBytes = fs.readFileSync(`${filepathimg}`);
         image = await pdfDoc.embedJpg(imageBytes);
@@ -70,14 +68,14 @@ const createPdf = async (req, res) => {
       res.sendFile(path.resolve(filepath), (err) => {
         if (err) {
           console.error('File Error:', err);
-          res.status(404).send('File not found.');
+          res.status(404).json({error : 'File not found.'});
         }
       });
   
   
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: "Internal Server Error" });
+      res.status(500).json({ error: err });
     }
   };
 

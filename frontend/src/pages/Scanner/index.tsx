@@ -1,155 +1,19 @@
-import { lazy, useState } from "react";
-import IntroContent from "../../content/IntroContent.json";
-import MiddleBlockContent from "../../content/MiddleBlockContent.json";
-import AboutContent from "../../content/AboutContent.json";
-import MissionContent from "../../content/MissionContent.json";
-import ProductContent from "../../content/ProductContent.json";
-import ContactContent from "../../content/ContactContent.json";
-import '../../App.css';
-import { StyledButton,StyledButton2,StyledButton3,StyledButton4, StyledButton5 } from "../../common/Button/styles";
-import {OrbitProgress} from "react-loading-indicators";
-
-const Contact = lazy(() => import("../../components/ContactForm"));
-const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
-const Container = lazy(() => import("../../common/Container"));
-const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
-const ContentBlock = lazy(() => import("../../components/ContentBlock"));
-
-interface ScannedData {
-  CompanyName: string;
-  Address: string;
-  TaxID: string;
-  Date: string;
-  Total: string;
-  Tax: string;
-}
+import React from "react";
+import {
+  StyledButton2,
+  StyledButton3,
+  StyledButton5,
+} from "../../common/Button/styles";
+import { OrbitProgress } from "react-loading-indicators";
+import useApi from "../../hooks/useApi";
+import useClient from "../../hooks/useClient";
+import Container from "../../common/Container";
+import ScrollToTop from "../../common/ScrollToTop";
+import "../../App.css"
 
 const Scanner: React.FC = () => {
-  const [uploadedImage, setUploadedImage] = useState<File | null>(null);
-  const [filename, setFilename] = useState<File | null>(null);
-  const [ext, setExt] = useState<File | null>(null);
-  const [id, setId] = useState<File | null>(null);
-  const [data, setData] = useState<boolean | null>(false);
-  const [scannedData, setScannedData] = useState<ScannedData>({
-    CompanyName: "",
-    Address: "",
-    TaxID: "",
-    Date: "",
-    Total: "",
-    Tax: "",
-  });
-  const [loading, setLoading] = useState<boolean>(false);
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setUploadedImage(file);
-      const reader = new FileReader();
-      reader.onload = () => {
-        const preview = reader.result as string;
-        const imageElement = document.getElementById('image-preview') as HTMLImageElement;
-        if (imageElement) {
-          imageElement.src = preview;
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleSendToAPI = async () => {
-    if (!uploadedImage) {
-      alert("Please upload an image first.");
-      return;
-    }
-
-    setLoading(true);
-    setData(false)
-    try {
-      const formData = new FormData();
-      formData.append('file', uploadedImage);
-
-      const response = await fetch('https://receipt-scanner-server.vercel.app/process', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("API error:", errorData);
-        throw new Error("Failed to fetch data from API.");
-      }
-      const data = await response.json();
-      setScannedData(data.parsedData);
-      setFilename(data.filename)
-      setExt(data.ext)
-      setId(data.id)
-      setData(true)
-    } catch (error) {
-      console.error("Error:", error);
-      setScannedData({
-        CompanyName: "Error",
-        Address: "Error",
-        TaxID: "Error",
-        Date: "Error",
-        Total: "Error",
-        Tax: "Error",
-      });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const downloadPdf = async () => {
-    try {
-
-      const dataToSend = {
-        scannedData,
-        filename,
-        ext,
-        id
-      };
-
-      const response = await fetch('https://receipt-scanner-server.vercel.app/pdf', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dataToSend),
-      });
-  
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error("API error:", errorData);
-        throw new Error("Failed to send data to API.");
-      }
-  
-      const pdfBlob = await response.blob();
-
-      const url = window.URL.createObjectURL(pdfBlob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "generated.pdf";
-      link.click();
-
-      window.URL.revokeObjectURL(url);
-
-    } catch (error) {
-      console.error("Download error:", error);
-    }
-  };
-
-  const copy= () => {
-
-    const jsonString = JSON.stringify(scannedData, null, 2);
-
-    navigator.clipboard.writeText(jsonString)
-      .then(() => {
-        alert("JSON copied successfully !");
-      })
-      .catch((error) => {
-        console.error("Copy error: ", error);
-      });
-  };
+  const { handleSendToAPI, downloadPdf, scannedData, loading, data } = useApi();
+  const { uploadedImage, handleImageUpload, copyToClipboard } = useClient();
 
   return (
     <Container>
@@ -167,9 +31,13 @@ const Scanner: React.FC = () => {
         />
       </div>
       <input type="file" onChange={handleImageUpload} className="file-input" />
-      <StyledButton2 style={{width:"100%"}} onClick={handleSendToAPI} disabled={loading}>
-      {loading ? "Processing..." : "Scan Receipt"}
-      </StyledButton2>
+      <StyledButton2
+              style={{ width: "100%" }}
+              onClick={() => handleSendToAPI(uploadedImage)}
+              disabled={loading}
+            >
+              {loading ? "Processing..." : "Scan Receipt"}
+            </StyledButton2>
     </div>
 
     <div className="scanned-data-section">
@@ -193,7 +61,7 @@ const Scanner: React.FC = () => {
     <StyledButton3 style={{ width: "100px", height: "44px", fontSize: "12px" }} onClick={downloadPdf}>
       Download PDF
     </StyledButton3>
-    <StyledButton5 style={{ width: "100px", height: "44px", fontSize: "12px" }} onClick={copy}>
+    <StyledButton5 style={{ width: "100px", height: "44px", fontSize: "12px" }} onClick={copyToClipboard}>
       Copy as JSON
     </StyledButton5>
   </>)}
@@ -204,6 +72,7 @@ const Scanner: React.FC = () => {
 
     </Container>
   );
+
 };
 
 export default Scanner;

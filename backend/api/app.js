@@ -54,6 +54,4 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-module.exports = (req, res) => {
-  app(req, res);
-};
+app.listen(3001,()=>{console.log("Server running...")})

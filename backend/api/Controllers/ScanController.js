@@ -69,8 +69,8 @@ const scanReceipt = async (req, res) => {
       res.status(200).send({parsedData,filename,ext,id})
   
     } catch (err) {
-      console.log(error)
-      res.status(500).json({error: err});
+      console.log(err)
+      res.status(400).json({error: err});
     }
   };
 

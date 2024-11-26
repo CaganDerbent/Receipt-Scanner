@@ -18,7 +18,7 @@ const scanReceipt = async (req, res) => {
   
       // "../../backend/tmp/receipts" + "/" + filename;
 
-      const filepath = path.join(__dirname, "../../tmp/receipts",filename);
+      const filepath = path.join(__dirname, "../../tmp/",filename);
   
       const imageBytes = fs.readFileSync(filepath);
       const base64Image = imageBytes.toString('base64');

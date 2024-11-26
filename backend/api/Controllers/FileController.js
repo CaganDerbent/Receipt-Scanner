@@ -9,18 +9,19 @@ const createPdf = async (req, res) => {
 
       const {filename,ext,id} = req.body;
       
-      // /tmp/templates/template.pdf
-      const existingPdfBytes = fs.readFileSync('/backend/tmp/templates/template.pdf');
+      // ../../backend/tmp/templates/template.pdf
+      const existingPdfBytes = fs.readFileSync(path.join(__dirname,'../../tmp/templates/template.pdf'));
       
       const pdfDoc = await PDFDocument.load(existingPdfBytes);
       pdfDoc.registerFontkit(fontkit);
       const pages = pdfDoc.getPages();
       const firstPage = pages[0];
   
-      const fontBytes = fs.readFileSync('/backend/tmp/fonts/cour.ttf');
+      // ../../backend/tmp/fonts/cour.ttf
+      const fontBytes = fs.readFileSync(path.join(__dirname,'../../tmp/fonts/cour.ttf'));
       const customFont = await pdfDoc.embedFont(fontBytes);
   
-      const fontBytes2 = fs.readFileSync('/backend/tmp/fonts/courbd.ttf');
+      const fontBytes2 = fs.readFileSync(path.join(__dirname,'../../tmp/fonts/courbd.ttf'));
       const customFontbd = await pdfDoc.embedFont(fontBytes2);
   
   
@@ -38,7 +39,7 @@ const createPdf = async (req, res) => {
       firstPage.drawText("Tax: " + jsonData.Tax, { x: 70, y: 460, size: 12, font: customFont });
   
       // ../../tmp/receipts/receipt_${id}${ext}
-      const filepathimg = path.join(__dirname, `/backend/tmp/receipts/receipt_${id}${ext}`);
+      const filepathimg = path.join(__dirname, `../../tmp/receipts/receipt_${id}${ext}`);
       const fileExtension = path.extname(filepathimg);
   
       if (fileExtension === '.jpg' || fileExtension === '.jpeg') {
@@ -62,8 +63,8 @@ const createPdf = async (req, res) => {
 
        // ../../../backend/
        // ../../../backend/tmp/documents/
-       const fileName = path.join(__dirname, "/backend/tmp/documents", "receipt_" + id + ".pdf");
-       const filepath = path.join(__dirname, "/backend/tmp/documents", "receipt_" + id + ".pdf");
+       const fileName = path.join(__dirname, "../../tmp/documents", "receipt_" + id + ".pdf");
+       const filepath = path.join(__dirname, "../../tmp/documents", "receipt_" + id + ".pdf");
   
       const pdfBytes = await pdfDoc.save();
       fs.writeFileSync(fileName, pdfBytes);

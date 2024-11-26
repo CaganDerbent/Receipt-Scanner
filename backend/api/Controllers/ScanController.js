@@ -16,9 +16,9 @@ const scanReceipt = async (req, res) => {
         return res.status(400).json({ error: 'File not uploaded.' });
       }
   
-      //const filepath = "/tmp/receipts" + "/" + filename;
+      // "../../backend/tmp/receipts" + "/" + filename;
 
-      const filepath = "/backend/tmp/receipts" + "/" + filename;
+      const filepath = path.join(__dirname, "../../tmp/receipts",filename);
   
       const imageBytes = fs.readFileSync(filepath);
       const base64Image = imageBytes.toString('base64');

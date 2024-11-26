@@ -37,7 +37,7 @@ const useApi = () => {
       formData.append("file", uploadedImage);
 
       const response = await fetch(
-        "https://receipt-scanner-server.vercel.app/process",
+        "http://localhost:3001/process",
         {
           method: "POST",
           body: formData,
@@ -80,7 +80,7 @@ const useApi = () => {
       };
 
       const response = await fetch(
-        "https://receipt-scanner-server.vercel.app/pdf",
+        "http://localhost:3001/pdf",
         {
           method: "POST",
           headers: {

@@ -9,7 +9,7 @@ import useApi from "../../hooks/useApi";
 import useClient from "../../hooks/useClient";
 import Container from "../../common/Container";
 import ScrollToTop from "../../common/ScrollToTop";
-import "../../App.css"
+import "../../styles/App.css";
 
 const Scanner: React.FC = () => {
   const { handleSendToAPI, downloadPdf, scannedData, loading, data } = useApi();

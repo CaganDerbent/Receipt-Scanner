@@ -30,7 +30,7 @@ let ext = "";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '/tmp/receipts'); 
+    cb(null, '/backend/tmp/receipts'); 
   },
   filename: (req, file, cb) => {
     ext = path.extname(file.originalname);
@@ -48,10 +48,10 @@ const upload = multer({
 });
 
 app.post('/process', upload.single('file'), scanReceipt);
-app.post('/pdf', upload.single('file'), createPdf);
+app.post('/pdf', createPdf);
 
 app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-app.listen(3001,()=>{console.log("Server running...")})
+app.listen(port,()=>{console.log("Server running...")})

@@ -6,14 +6,13 @@ All the necessary information about OpenAI API can be found at the link: https:/
 
 # Footage
 
-Home
+
 ![home1](https://github.com/user-attachments/assets/80f55b5a-4bf3-41d3-bbfc-7273115d250a)
 
 ![home2](https://github.com/user-attachments/assets/eae1bead-4f7d-41b3-af42-66fa81eed6d6)
 
 ![home3](https://github.com/user-attachments/assets/21874236-e161-4774-9fa3-5a727aa1216a)
 
-Receipt Example
 ![scan](https://github.com/user-attachments/assets/87d290b9-45a9-49e5-bc27-90580adf903c)
 
 PDF Example

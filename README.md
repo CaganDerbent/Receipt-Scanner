@@ -15,6 +15,5 @@ All the necessary information about OpenAI API can be found at the link: https:/
 
 ![scan](https://github.com/user-attachments/assets/87d290b9-45a9-49e5-bc27-90580adf903c)
 
-PDF Example
 ![pdf](https://github.com/user-attachments/assets/ba74942b-eaca-4233-92e6-fa5a6891efb1)
 
